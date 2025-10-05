@@ -1,0 +1,66 @@
+{
+  "site": {
+    "name": "Grace Community Church",
+    "tagline": "Love God. Love People. Make Disciples.",
+    "logo": "assets/img/logo.svg",
+    "primary_color": "#2B5DFF",
+    "accent_color": "#F4B400"
+  },
+  "contact": {
+    "email": "info@example.org",
+    "phone": "+1 (555) 123-4567",
+    "address_line1": "123 Main St",
+    "address_line2": "Calgary, AB T2X 1Y1",
+    "map_url": "https://maps.google.com/?q=Calgary",
+    "form_endpoint": ""
+  },
+  "service_times": [
+    {
+      "label": "Sunday Worship",
+      "time": "Sundays 10:00 AM"
+    },
+    {
+      "label": "Midweek Prayer",
+      "time": "Wednesdays 7:00 PM"
+    }
+  ],
+  "social": {
+    "facebook": "https://facebook.com/yourchurch",
+    "youtube": "https://youtube.com/@yourchurch",
+    "instagram": "https://instagram.com/yourchurch"
+  },
+  "give": {
+    "providers": [
+      {
+        "name": "Tithe.ly",
+        "url": "https://tithe.ly/give"
+      },
+      {
+        "name": "PayPal",
+        "url": "https://paypal.me/yourchurch"
+      }
+    ]
+  },
+  "ministries": [
+    {
+      "name": "Kids",
+      "description": "Fun, safe, Bible\u2011centered ministry for ages 0\u201311."
+    },
+    {
+      "name": "Youth",
+      "description": "Grades 6\u201312 gather weekly for discipleship and games."
+    },
+    {
+      "name": "Adults",
+      "description": "Small groups, classes, and serving teams."
+    },
+    {
+      "name": "Worship",
+      "description": "Music, tech, and creative arts."
+    },
+    {
+      "name": "Outreach",
+      "description": "Serving our city and beyond."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact • Grace Community Church</title>
+  <meta name="description" content="A modern, accessible church website template.">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  
+  <link rel="preload" as="image" href="assets/img/logo.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Church", "name": "Grace Community Church", "url": "https://example.org", "logo": "assets/img/logo.svg", "address": {"@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA"}, "telephone": "+1-555-123-4567"}
+  </script>
+</head>
+<body>
+  <div id="site-header"></div>
+  
+  <section class="section">
+    <div class="container">
+      <span class="kicker">Contact</span>
+      <h1>We’d love to hear from you</h1>
+      <div class="grid grid-2">
+        <div>
+          <form id="contact-form" aria-label="Contact form">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" required placeholder="Your full name">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required placeholder="How can we help?"></textarea>
+            <div class="actions">
+              <button class="btn" type="submit">Send</button>
+              <span class="small">We’ll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Visit Us</h3>
+          <p><strong>Address:</strong> <span id="addr"></span></p>
+          <p><strong>Phone:</strong> <span id="phone"></span></p>
+          <p><strong>Email:</strong> <span id="emailText"></span></p>
+          <p><a class="btn ghost" id="mapBtn" href="#">Open Map</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+  document.addEventListener('DOMContentLoaded', async ()=>{
+    const resp = await fetch('config.json'); const cfg = await resp.json();
+    document.getElementById('addr').textContent = (cfg.contact.address_line1||'') + ', ' + (cfg.contact.address_line2||'');
+    document.getElementById('phone').innerHTML = `<a href="tel:${cfg.contact.phone}">${cfg.contact.phone}</a>`;
+    document.getElementById('emailText').innerHTML = `<a href="mailto:${cfg.contact.email}">${cfg.contact.email}</a>`;
+    document.getElementById('mapBtn').setAttribute('href', cfg.contact.map_url||'#');
+  });
+  </script>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
