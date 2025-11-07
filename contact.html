@@ -96,6 +96,27 @@
             font-weight: 600;
         }
 
+        .mobile-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Mobile Menu */
+        .nav-links.mobile-active {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.98);
+            padding: 2rem;
+            gap: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
         /* Hero */
         .page-hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -439,6 +460,14 @@
         }
 
         @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
             .contact-container {
                 grid-template-columns: 1fr;
             }
@@ -467,6 +496,9 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="cta-btn">Get Started</a></li>
             </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
@@ -690,7 +722,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="mailto:support@createfy.ca">support@createfy.ca</a></li>
-                    <li><a href="tel:+4037088062">(403) 708-8062</a></li>
+                    <li><a href="tel:+14037088062">(403) 708-8062</a></li>
                     <li>Calgary, Alberta</li>
                 </ul>
             </div>
@@ -701,6 +733,32 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('mobile-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {

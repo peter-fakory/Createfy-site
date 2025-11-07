@@ -115,6 +115,20 @@
             cursor: pointer;
         }
 
+        /* Mobile Menu */
+        .nav-links.mobile-active {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.98);
+            padding: 2rem;
+            gap: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -692,12 +706,12 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <div class="logo-icon">C</div>
                 <span>Createfy</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="cta-btn">Get Started</a></li>
@@ -716,7 +730,7 @@
                 <p>Premium websites and SEO starting at $25/month. No upfront costs, no contracts. Just results that drive growth.</p>
                 <div class="hero-buttons">
                     <a href="#pricing" class="btn-primary">View Plans</a>
-                    <a href="portfolio.html" class="btn-secondary">See Our Work</a>
+                    <a href="contact.html" class="btn-secondary">Contact Us</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -844,7 +858,7 @@
                     <li><i class="fas fa-check-circle"></i> 2 Revisions/Year</li>
                     <li><i class="fas fa-check-circle"></i> Email Support</li>
                 </ul>
-                <button class="plan-btn">Get Started</button>
+                <button class="plan-btn" onclick="window.location.href='contact.html'">Get Started</button>
             </div>
 
             <div class="pricing-card featured">
@@ -862,7 +876,7 @@
                     <li><i class="fas fa-check-circle"></i> Monthly Content Updates</li>
                     <li><i class="fas fa-check-circle"></i> Priority Support</li>
                 </ul>
-                <button class="plan-btn">Get Started</button>
+                <button class="plan-btn" onclick="window.location.href='contact.html'">Get Started</button>
             </div>
 
             <div class="pricing-card">
@@ -880,7 +894,7 @@
                     <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
                     <li><i class="fas fa-check-circle"></i> 24/7 Phone Support</li>
                 </ul>
-                <button class="plan-btn">Get Started</button>
+                <button class="plan-btn" onclick="window.location.href='contact.html'">Get Started</button>
             </div>
         </div>
     </section>
@@ -942,6 +956,32 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('mobile-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
