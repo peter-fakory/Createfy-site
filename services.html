@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Createfy | Premium Web Design & SEO - Calgary's #1 Digital Agency</title>
-    <meta name="description" content="Transform your business with Createfy's subscription-based web design and SEO services. Starting at $25/month. No upfront costs. Calgary-based, Canada-wide service.">
+    <title>Createfy | Services</title>
+    <meta name="description" content="Overview of Createfy services: web design, SEO, e-commerce, content marketing, and branding for Canadian small businesses.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%236366f1'/><stop offset='100%25' style='stop-color:%23ec4899'/></linearGradient></defs><rect width='100' height='100' rx='15' fill='url(%23g)'/><text x='50' y='72' font-size='65' text-anchor='middle' fill='white' font-weight='bold' font-family='Arial'>C</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -701,59 +701,352 @@
                 justify-content: center;
             }
         }
+    
+        /* ===== Service pages (shared styles) ===== */
+        .service-page {
+            padding-top: 100px; /* space for fixed navbar */
+            background: var(--light);
+        }
+
+        .service-hero {
+            padding: 80px 5% 40px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.18) 0%, transparent 55%);
+        }
+
+        .service-hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .service-label {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.85rem;
+            color: #a5b4fc;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-hero h1 {
+            font-size: 2.6rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .service-intro {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 640px;
+        }
+
+        .service-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .service-hero-note {
+            color: #e5e7eb;
+            font-size: 0.9rem;
+        }
+
+        .service-hero-note i {
+            color: #22c55e;
+            margin-right: 0.35rem;
+        }
+
+        .service-hero-visual {
+            color: white;
+        }
+
+        .service-hero-card {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 20px;
+            padding: 1.5rem 1.75rem;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-hero-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-hero-card p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .service-hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-tag {
+            padding: 0.35rem 0.8rem;
+            font-size: 0.75rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            color: #e5e7eb;
+        }
+
+        .service-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .service-stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-stat-label {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .service-section {
+            padding: 60px 5%;
+            background: white;
+        }
+
+        .service-section.light {
+            background: var(--light);
+        }
+
+        .service-section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-section p {
+            color: var(--gray);
+        }
+
+        .service-list {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+            color: var(--dark);
+        }
+
+        .service-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .packages-intro {
+            max-width: 650px;
+            margin-top: 0.5rem;
+        }
+
+        .package-grid {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+            border-color: var(--primary);
+        }
+
+        .package-featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), rgba(236, 72, 153, 0.03));
+        }
+
+        .package-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .package-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+            color: var(--dark);
+        }
+
+        .package-tagline {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 0.8rem;
+        }
+
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 0.8rem;
+        }
+
+        .package-card ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .package-card ul li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .package-note {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1.2rem;
+        }
+
+        .process-list {
+            margin-top: 1.5rem;
+            padding-left: 1.2rem;
+            color: var(--dark);
+        }
+
+        .process-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .service-cta {
+            text-align: center;
+        }
+
+        .service-cta h2 {
+            font-size: 2.2rem;
+        }
+
+        .service-cta p {
+            max-width: 600px;
+            margin: 0.75rem auto 1.5rem;
+        }
+
+        @media (max-width: 968px) {
+            .service-hero-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-hero {
+                padding-top: 90px;
+            }
+
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">C</div>
-                <span>Createfy</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="cta-btn">Get Started</a></li>
-            </ul>
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">C</div>
+            <span>Createfy</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="cta-btn">Get Started</a></li>
+        </ul>
+        <div class="mobile-toggle">
+            <i class="fas fa-bars"></i>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Transform Your Business with <span class="gradient-text">Next-Gen Web Design</span></h1>
-                <p>Premium websites and SEO starting at $25/month. No upfront costs, no contracts. Just results that drive growth.</p>
-                <div class="hero-buttons">
-                    <a href="#pricing" class="btn-primary">View Plans</a>
-                    <a href="contact.html" class="btn-secondary">Contact Us</a>
+    </div>
+</nav>
+    <main class="service-page">
+    <section class="service-hero">
+        <div class="service-hero-inner">
+            <div>
+                <p class="service-label">Services</p>
+                <h1>Everything you need to look professional online.</h1>
+                <p class="service-intro">
+                    Createfy helps Canadian small businesses with clean websites, better Google visibility,
+                    clear content, and practical branding. Start with what you need today and add more as you grow.
+                </p>
+                <div class="service-hero-actions">
+                    <a href="contact.html?service=general" class="btn-primary">Book a free consult</a>
+                    <span class="service-hero-note">
+                        <i class="fas fa-check-circle"></i>
+                        We'll help you decide which services make sense for your budget and goals.
+                    </span>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="floating-card">
-                    <h3 style="margin-bottom: 1.5rem;">Why Calgary Businesses Choose Us</h3>
-                    <div class="stat-grid">
-                        <div class="stat-item">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">Happy Clients</div>
+            <div class="service-hero-visual">
+                <div class="service-hero-card">
+                    <h3>One partner for your online presence</h3>
+                    <p>
+                        Instead of juggling multiple freelancers, work with a single point of contact who understands
+                        your business and can handle web design, SEO, content, and branding together.
+                    </p>
+                    <div class="service-hero-tags">
+                        <span class="service-tag">Websites</span>
+                        <span class="service-tag">SEO</span>
+                        <span class="service-tag">Content</span>
+                        <span class="service-tag">Branding</span>
+                        <span class="service-tag">E-commerce</span>
+                    </div>
+                    <div class="service-hero-stats">
+                        <div class="service-stat">
+                            <div class="service-stat-number">5</div>
+                            <div class="service-stat-label">core service areas</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Satisfaction Rate</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">$25</div>
-                            <div class="stat-label">Starting Price</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Support</div>
+                        <div class="service-stat">
+                            <div class="service-stat-number">1</div>
+                            <div class="service-stat-label">simple point of contact</div>
                         </div>
                     </div>
                 </div>
@@ -761,156 +1054,91 @@
         </div>
     </section>
 
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="trust-container">
-            <div class="trust-text">Trusted by 200+ Canadian businesses</div>
-            <div class="trust-badges">
-                <div class="badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>SSL Secured</span>
-                </div>
-                <div class="badge">
-                    <i class="fas fa-star"></i>
-                    <span>5-Star Rated</span>
-                </div>
-                <div class="badge">
-                    <i class="fas fa-flag"></i>
-                    <span>Calgary Based</span>
-                </div>
-                <div class="badge">
-                    <i class="fas fa-headset"></i>
-                    <span>24/7 Support</span>
-                </div>
+    <section class="service-section">
+        <div class="service-section-inner">
+            <h2>Services at a glance</h2>
+            <p>Explore what we can help you with and click through for more details on each service.</p>
+
+            <div class="package-grid" style="margin-top: 2.5rem;">
+                <article class="package-card">
+                    <h3>Web Design</h3>
+                    <p class="package-tagline">
+                        Custom-designed websites that make your business look professional and convert visitors into enquiries.
+                    </p>
+                    <ul>
+                        <li>Bespoke designs (not just cookie-cutter templates).</li>
+                        <li>Mobile-friendly layouts for phones, tablets, and desktops.</li>
+                        <li>Clear calls-to-action to drive calls, bookings, and leads.</li>
+                    </ul>
+                    <a href="web-design.html" class="btn-primary">View Web Design</a>
+                </article>
+
+                <article class="package-card">
+                    <h3>SEO Services</h3>
+                    <p class="package-tagline">
+                        Get found on Google by the people already searching for what you do, especially in your local area.
+                    </p>
+                    <ul>
+                        <li>On-page SEO and technical clean-up.</li>
+                        <li>Local SEO and Google Business Profile optimisation.</li>
+                        <li>Ongoing content to target the right keywords.</li>
+                    </ul>
+                    <a href="seo-services.html" class="btn-primary">View SEO Services</a>
+                </article>
+
+                <article class="package-card">
+                    <h3>E-commerce</h3>
+                    <p class="package-tagline">
+                        Sell products or services online with a store that’s simple for customers to use and simple for you to manage.
+                    </p>
+                    <ul>
+                        <li>Shopify or WooCommerce store setup.</li>
+                        <li>Product, shipping, and payment configuration.</li>
+                        <li>Training so you can manage your own store.</li>
+                    </ul>
+                    <a href="ecommerce.html" class="btn-primary">View E-commerce</a>
+                </article>
+
+                <article class="package-card">
+                    <h3>Content Marketing</h3>
+                    <p class="package-tagline">
+                        Helpful, search-friendly content that answers your customers’ questions and builds trust.
+                    </p>
+                    <ul>
+                        <li>Blog posts, service page copy, and FAQs.</li>
+                        <li>Content aligned with real search terms your customers use.</li>
+                        <li>Repurposed snippets for social media or email.</li>
+                    </ul>
+                    <a href="content-marketing.html" class="btn-primary">View Content Marketing</a>
+                </article>
+
+                <article class="package-card">
+                    <h3>Branding</h3>
+                    <p class="package-tagline">
+                        A clear visual identity so your business looks consistent everywhere your customers see you.
+                    </p>
+                    <ul>
+                        <li>Logos, colour palettes, and font choices.</li>
+                        <li>Brand guidelines so everything looks on-brand.</li>
+                        <li>Social media and basic print-ready assets.</li>
+                    </ul>
+                    <a href="branding.html" class="btn-primary">View Branding</a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="section-header">
-            <div class="section-tag">Why Choose Createfy</div>
-            <h2>Everything You Need to Dominate Online</h2>
-            <p>We don't just build websites. We create digital experiences that convert visitors into customers and drive measurable growth.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>Lightning-Fast Performance</h3>
-                <p>Optimized for speed with 99.9% uptime guarantee. Your site loads in under 2 seconds, keeping visitors engaged and Google happy.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>Mobile-First Design</h3>
-                <p>Stunning on every device. 60% of traffic is mobile - your site will look perfect on phones, tablets, and desktops.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <h3>SEO Powerhouse</h3>
-                <p>Built with SEO best practices from day one. Rank higher, get found faster, and dominate your local market.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h3>Bank-Level Security</h3>
-                <p>SSL certificates, daily backups, malware protection, and 24/7 monitoring. Your site is fortress-protected.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3>Custom Design</h3>
-                <p>No templates. No cookie-cutter solutions. Every site is uniquely crafted to match your brand and vision.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Analytics & Insights</h3>
-                <p>Know what works. Track visitors, conversions, and ROI with integrated analytics and monthly performance reports.</p>
-            </div>
+    <section class="service-section service-cta light">
+        <div class="service-section-inner">
+            <h2>Not sure where to start?</h2>
+            <p>
+                You don’t have to figure it all out alone. Tell us where your business is today and where you’d like it to be.
+                We’ll suggest a simple plan and a custom quote — even if that just means starting with one small project.
+            </p>
+            <a href="contact.html?service=general" class="btn-primary">Book a free consult</a>
         </div>
     </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="section-header">
-            <div class="section-tag">Transparent Pricing</div>
-            <h2>Plans That Scale With Your Business</h2>
-            <p>No hidden fees. No surprises. Just honest, affordable pricing that grows with you.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="plan-name">Starter</div>
-                <div class="plan-price">$25<span>/mo</span></div>
-                <div class="plan-description">Perfect for startups and solo entrepreneurs launching their first professional site.</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check-circle"></i> Up to 3 Custom Pages</li>
-                    <li><i class="fas fa-check-circle"></i> Mobile Responsive Design</li>
-                    <li><i class="fas fa-check-circle"></i> Free SSL Certificate</li>
-                    <li><i class="fas fa-check-circle"></i> Canadian Hosting Included</li>
-                    <li><i class="fas fa-check-circle"></i> Basic SEO Setup</li>
-                    <li><i class="fas fa-check-circle"></i> 2 Revisions/Year</li>
-                    <li><i class="fas fa-check-circle"></i> Email Support</li>
-                </ul>
-                <button class="plan-btn" onclick="window.location.href='contact.html'">Get Started</button>
-            </div>
-
-            <div class="pricing-card featured">
-                <div class="popular-badge">Most Popular</div>
-                <div class="plan-name">Growth</div>
-                <div class="plan-price">$65<span>/mo</span></div>
-                <div class="plan-description">For growing businesses ready to scale their online presence and capture more leads.</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check-circle"></i> Up to 7 Custom Pages</li>
-                    <li><i class="fas fa-check-circle"></i> Premium Design & Animations</li>
-                    <li><i class="fas fa-check-circle"></i> Advanced SEO Optimization</li>
-                    <li><i class="fas fa-check-circle"></i> Social Media Integration</li>
-                    <li><i class="fas fa-check-circle"></i> Contact Forms & CRM</li>
-                    <li><i class="fas fa-check-circle"></i> Google Analytics Setup</li>
-                    <li><i class="fas fa-check-circle"></i> Monthly Content Updates</li>
-                    <li><i class="fas fa-check-circle"></i> Priority Support</li>
-                </ul>
-                <button class="plan-btn" onclick="window.location.href='contact.html'">Get Started</button>
-            </div>
-
-            <div class="pricing-card">
-                <div class="plan-name">Enterprise</div>
-                <div class="plan-price">$145<span>/mo</span></div>
-                <div class="plan-description">Complete solution for established businesses needing e-commerce, advanced features, and maximum support.</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check-circle"></i> Up to 15 Custom Pages</li>
-                    <li><i class="fas fa-check-circle"></i> Full E-commerce Integration</li>
-                    <li><i class="fas fa-check-circle"></i> Custom Features & Tools</li>
-                    <li><i class="fas fa-check-circle"></i> Advanced SEO Strategy</li>
-                    <li><i class="fas fa-check-circle"></i> Content Marketing (2 Blogs/mo)</li>
-                    <li><i class="fas fa-check-circle"></i> Conversion Optimization</li>
-                    <li><i class="fas fa-check-circle"></i> Weekly Performance Reports</li>
-                    <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
-                    <li><i class="fas fa-check-circle"></i> 24/7 Phone Support</li>
-                </ul>
-                <button class="plan-btn" onclick="window.location.href='contact.html'">Get Started</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Join 200+ Canadian businesses that trust Createfy for their digital success. Get started today with our risk-free 30-day trial.</p>
-            <a href="contact.html" class="btn-primary">Start Your Free Trial</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
+</main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -956,7 +1184,6 @@
             <p>&copy; 2024 Createfy. All rights reserved. | <a href="#" style="color: #94a3b8;">Privacy Policy</a> | <a href="#" style="color: #94a3b8;">Terms of Service</a></p>
         </div>
     </footer>
-
     <script>
         // Mobile menu toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
