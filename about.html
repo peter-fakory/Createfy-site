@@ -29,7 +29,6 @@
             color: var(--dark);
         }
 
-        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -109,7 +108,6 @@
             cursor: pointer;
         }
 
-        /* Mobile Menu */
         .nav-links.mobile-active {
             display: flex !important;
             flex-direction: column;
@@ -123,7 +121,6 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        /* Hero Section */
         .page-hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             padding: 150px 5% 80px;
@@ -149,7 +146,6 @@
             margin: 0 auto;
         }
 
-        /* Story Section */
         .story-section {
             padding: 100px 5%;
             background: white;
@@ -211,7 +207,6 @@
             font-weight: 600;
         }
 
-        /* Values Section */
         .values-section {
             padding: 100px 5%;
             background: var(--light);
@@ -285,7 +280,6 @@
             line-height: 1.8;
         }
 
-        /* Team Section */
         .team-section {
             padding: 100px 5%;
             background: white;
@@ -295,45 +289,101 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 3rem;
         }
 
-        .team-card {
-            text-align: center;
+        .expertise-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), rgba(236, 72, 153, 0.03));
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .team-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            margin: 0 auto 1.5rem;
+        }
+
+        .expertise-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .expertise-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 4rem;
-            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .team-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-role {
-            color: var(--primary);
+        .expertise-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
             font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 1rem;
         }
 
-        .team-card p {
-            color: var(--gray);
-            line-height: 1.8;
+        .expertise-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
         }
 
-        /* CTA Section */
+        .expertise-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .expertise-highlights {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .highlight-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
         .cta-section {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             padding: 80px 5%;
@@ -368,7 +418,6 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
         .footer {
             background: var(--dark);
             color: white;
@@ -463,11 +512,103 @@
             .page-hero h1 {
                 font-size: 2.5rem;
             }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .story-content h2 {
+                font-size: 2rem;
+            }
+
+            .expertise-card h3,
+            .value-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-hero {
+                padding: 120px 5% 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .page-hero p {
+                font-size: 1.1rem;
+            }
+
+            .story-section,
+            .values-section,
+            .team-section {
+                padding: 60px 5%;
+            }
+
+            .story-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-box {
+                padding: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .story-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .story-content p,
+            .expertise-card p,
+            .value-card p {
+                font-size: 1rem;
+            }
+
+            .expertise-card,
+            .value-card {
+                padding: 2rem;
+            }
+
+            .expertise-icon,
+            .value-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 60px 5%;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1.1rem;
+            }
+
+            .btn-primary {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 40px 5% 20px;
+            }
+
+            .footer-container {
+                gap: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -487,18 +628,16 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="page-hero">
         <h1>We're <span class="gradient-text">Createfy</span></h1>
         <p>A passionate team of designers, developers, and digital strategists on a mission to help Canadian businesses thrive online.</p>
     </section>
 
-    <!-- Story Section -->
     <section class="story-section">
         <div class="story-container">
             <div class="story-content">
                 <h2>Our Story</h2>
-                <p>Founded in Calgary in 2019, Createfy was born from a simple observation: too many great businesses were being held back by expensive, complicated, and outdated web solutions.</p>
+                <p>Founded in Calgary in 2015, Createfy was born from a simple observation: too many great businesses were being held back by expensive, complicated, and outdated web solutions.</p>
                 <p>We saw talented entrepreneurs struggling with DIY website builders, paying thousands upfront for mediocre results, or worse—having no online presence at all.</p>
                 <p>So we set out to change that. We created a subscription model that makes premium web design accessible, affordable, and stress-free for businesses of all sizes.</p>
                 <p>Today, we're proud to serve over 200 Canadian businesses, from Calgary corner cafes to coast-to-coast e-commerce stores.</p>
@@ -510,7 +649,7 @@
                         <div class="stat-label">Websites Launched</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">5 Years</div>
+                        <div class="stat-number">9 Years</div>
                         <div class="stat-label">In Business</div>
                     </div>
                     <div class="stat-box">
@@ -518,15 +657,14 @@
                         <div class="stat-label">Client Retention</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">$2.5M+</div>
-                        <div class="stat-label">Revenue Generated</div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
     <section class="values-section">
         <div class="section-header">
             <div class="section-tag">Our Values</div>
@@ -565,43 +703,90 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team-section">
         <div class="section-header">
-            <div class="section-tag">Meet The Team</div>
-            <h2>The Minds Behind Createfy</h2>
-            <p>A diverse team of experts passionate about helping your business grow.</p>
+            <div class="section-tag">Our Expertise</div>
+            <h2>Expert Team Behind Your Success</h2>
+            <p>Decades of combined experience working together to deliver exceptional results for your business.</p>
         </div>
         <div class="team-grid">
-            <div class="team-card">
-                <div class="team-photo">JD</div>
-                <h3>Jordan Davis</h3>
-                <div class="team-role">Founder & CEO</div>
-                <p>15 years in digital marketing and web development. Former tech lead at a Fortune 500 company.</p>
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <span class="expertise-badge">Leadership</span>
+                <h3>Strategic Vision</h3>
+                <p>Our leadership team brings over 15 years of experience from Fortune 500 companies and leading digital agencies. We've guided hundreds of businesses to online success through strategic thinking and proven methodologies.</p>
+                <div class="expertise-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>15+ Years Industry Experience</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Fortune 500 Background</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Growth-Focused Strategy</span>
+                    </div>
+                </div>
             </div>
-            <div class="team-card">
-                <div class="team-photo">SC</div>
-                <h3>Sarah Chen</h3>
-                <div class="team-role">Creative Director</div>
-                <p>Award-winning designer with a passion for creating stunning, conversion-focused experiences.</p>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <span class="expertise-badge">Design</span>
+                <h3>Creative Excellence</h3>
+                <p>Award-winning designers who specialize in creating stunning, conversion-focused experiences. We blend beautiful aesthetics with data-driven user experience principles to deliver websites that perform.</p>
+                <div class="expertise-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Award-Winning Design</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>UX/UI Specialists</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Conversion Optimization</span>
+                    </div>
+                </div>
             </div>
-            <div class="team-card">
-                <div class="team-photo">MP</div>
-                <h3>Marcus Patel</h3>
-                <div class="team-role">Head of SEO</div>
-                <p>10+ years dominating search rankings for businesses across Canada and beyond.</p>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <span class="expertise-badge">Marketing</span>
+                <h3>SEO & Growth</h3>
+                <p>Our SEO specialists have a decade-plus track record of dominating search rankings for Canadian businesses. We stay ahead of algorithm changes to keep your business visible where it matters most.</p>
+                <div class="expertise-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>10+ Years SEO Expertise</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>First-Page Rankings</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Proven ROI Results</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
         <h2>Ready to Work Together?</h2>
         <p>Let's create something amazing for your business.</p>
         <a href="contact.html" class="btn-primary">Start Your Project</a>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -647,7 +832,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -663,7 +847,6 @@
             }
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('mobile-active');
